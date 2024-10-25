@@ -1,25 +1,98 @@
 
+html{
+    scroll-behavior: smooth;
+}
+
+/*selector universal*/
+* {
+    /*actualiza el calculo del modelo de caja css*/
+    box-sizing: border-box;
+}
+
 body {
     font-family: "Raleway", sans-serif;
     font-optical-sizing: auto;
     font-weight: 100;
     font-style: normal;
   }
-  .portada-img {
+
+#navbar{
+    display: flex; /*ubica a los hijos directos en hilera*/
+    justify-content: space-between; /*alineacion en el eje principal de ese padre flexible*/
+
+    /*vamos a fijar la barra del menu al tope de la ventana*/
+    position: fixed;
+    left:0;
+    top:0;
+    right:0;
+
+    z-index: 0;
+    background-color: red;    
+}
+
+.portada-img {
     min-height: 100vh;
     background-color: whitesmoke;
     color: black;
+    /*opacity: 0%;*/
     background-image: url(../img/portada.webp);
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+/*tecnicas responsive*/
+.image-fluida {
+    max-width: 100%;
+    height: auto;
+}
+
+/*sistema de grillas, con el esquema de flexbox*/
+
+.contenedor {
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.fila {
+    /*padre flexible, que los hijos directos se disponen en hilera o fila*/
+    display: flex;
+    /*envoltorio*/
+    flex-wrap: wrap;
+
+}
+/*selector de hijo directo*/
+.fila > div {
+    padding-left: 5%;
+    padding-right: 15px;
+}
+
+.col-movil-100{
+    width:100%;
+}
+.col-movil-50{
+    width:50%;
+}
+.col-movil-30{
+    width:30%;
+}
+
+.justificacion-centrada {
+    justify-content: center;
+}
+
+.justificacion-espaciado-alrededor {
+    justify-content: space-around;
+}
+
+
 
 @media (min-width:768px){
 
     .portada-img {
         background-image: url(../img/portada.webp);
     }
-
+   
 }
 
 
